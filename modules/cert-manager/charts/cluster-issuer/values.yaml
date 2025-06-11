@@ -1,0 +1,9 @@
+# Let's Encrypt will use this to contact you about expiring certificates, and 
+# issues related to your account.
+email: null
+
+# ACME server URL for Let’s Encrypt’s environment. Defaults to production.
+server: "https://acme-v02.api.letsencrypt.org/directory"
+
+# Secret resource used to store the account's private key.
+privateKeySecretRef: "letsencrypt-secret"
