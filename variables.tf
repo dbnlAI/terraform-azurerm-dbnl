@@ -200,3 +200,9 @@ variable "tags" {
     ManagedBy   = "Terraform"
   }
 }
+
+variable "terms_of_service_disabled" {
+  type        = bool
+  description = "Whether to disable the terms of service acceptance requirement."
+  default     = false
+}

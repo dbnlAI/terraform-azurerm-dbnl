@@ -70,6 +70,7 @@
 | <a name="input_registry_server"></a> [registry\_server](#input\_registry\_server) | Artifact registry server. | `string` | `"us-docker.pkg.dev/dbnlai"` | no |
 | <a name="input_registry_username"></a> [registry\_username](#input\_registry\_username) | Artifact registry username. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to assign to the resources. | `map(string)` | <pre>{<br/>  "Environment": "sandbox",<br/>  "ManagedBy": "Terraform",<br/>  "Project": "dbnl"<br/>}</pre> | no |
+| <a name="input_terms_of_service_disabled"></a> [terms\_of\_service\_disabled](#input\_terms\_of\_service\_disabled) | Whether to disable the terms of service acceptance requirement. | `bool` | `false` | no |
 | <a name="input_vnet_cidr"></a> [vnet\_cidr](#input\_vnet\_cidr) | The CIDR block for the virtual network. | `string` | `"10.10.0.0/16"` | no |
 
 ## Outputs

@@ -149,10 +149,11 @@ module "app" {
 
   domain = var.domain
 
-  oidc_audience  = var.oidc_audience
-  oidc_client_id = var.oidc_client_id
-  oidc_issuer    = var.oidc_issuer
-  oidc_scopes    = var.oidc_scopes
+  oidc_audience             = var.oidc_audience
+  oidc_client_id            = var.oidc_client_id
+  oidc_issuer               = var.oidc_issuer
+  oidc_scopes               = var.oidc_scopes
+  terms_of_service_disabled = var.terms_of_service_disabled
 
   prefix = local.prefix
 

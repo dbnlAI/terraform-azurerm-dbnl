@@ -186,6 +186,9 @@ locals {
         container          = var.abs_container
       }
     }
+    tos = {
+      disabled = var.terms_of_service_disabled
+    }
   }
 }
 
