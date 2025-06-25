@@ -186,9 +186,6 @@ locals {
         container          = var.abs_container
       }
     }
-    tos = {
-      disabled = true
-    }
   }
 }
 
