@@ -187,7 +187,7 @@ locals {
       }
     }
     tos = {
-      disabled = true
+      disabled = var.terms_of_service_disabled
     }
   }
 }
