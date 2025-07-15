@@ -157,7 +157,7 @@ variable "registry_password" {
 variable "registry_server" {
   type        = string
   description = "Artifact registry server."
-  default     = "us-docker.pkg.dev/dbnlai"
+  default     = "ghcr.io/dbnlai"
 }
 
 variable "abs_storage_account_name" {

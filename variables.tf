@@ -143,7 +143,7 @@ variable "flower_basic_auth_username" {
 variable "helm_chart_version" {
   type        = string
   description = "Helm chart version."
-  default     = "0.23.4"
+  default     = "0.25.0"
 }
 
 variable "helm_release_name" {
@@ -170,19 +170,21 @@ variable "instance_size" {
 variable "registry_server" {
   type        = string
   description = "Artifact registry server."
-  default     = "us-docker.pkg.dev/dbnlai"
+  default     = "ghcr.io/dbnlai"
 }
 
 variable "registry_username" {
   type        = string
   description = "Artifact registry username."
   sensitive   = true
+  default     = null
 }
 
 variable "registry_password" {
   type        = string
   description = "Artifact registry password."
   sensitive   = true
+  default     = null
 }
 
 variable "acme_email" {
