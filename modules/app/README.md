@@ -54,9 +54,9 @@ No modules.
 | <a name="input_redis_password"></a> [redis\_password](#input\_redis\_password) | Redis password. | `string` | n/a | yes |
 | <a name="input_redis_port"></a> [redis\_port](#input\_redis\_port) | Redis port. | `number` | n/a | yes |
 | <a name="input_redis_username"></a> [redis\_username](#input\_redis\_username) | Redis username. | `string` | n/a | yes |
-| <a name="input_registry_password"></a> [registry\_password](#input\_registry\_password) | Artifact registry password. | `string` | n/a | yes |
-| <a name="input_registry_server"></a> [registry\_server](#input\_registry\_server) | Artifact registry server. | `string` | `"us-docker.pkg.dev/dbnlai"` | no |
-| <a name="input_registry_username"></a> [registry\_username](#input\_registry\_username) | Artifact registry username. | `string` | n/a | yes |
+| <a name="input_registry_password"></a> [registry\_password](#input\_registry\_password) | Artifact registry password. | `string` | `null` | no |
+| <a name="input_registry_server"></a> [registry\_server](#input\_registry\_server) | Artifact registry server. | `string` | `"ghcr.io/dbnlai"` | no |
+| <a name="input_registry_username"></a> [registry\_username](#input\_registry\_username) | Artifact registry username. | `string` | `null` | no |
 | <a name="input_service_identities"></a> [service\_identities](#input\_service\_identities) | Service identity ids. | `map(object({ client_id = string, tenant_id = string }))` | n/a | yes |
 | <a name="input_terms_of_service_disabled"></a> [terms\_of\_service\_disabled](#input\_terms\_of\_service\_disabled) | Whether to disable the terms of service acceptance requirement. | `bool` | `false` | no |
 

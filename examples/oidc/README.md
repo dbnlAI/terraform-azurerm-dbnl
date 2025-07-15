@@ -10,8 +10,5 @@ This example shows how to create an OIDC dbnl deployment to get familiar with th
 
     ```bash
     az login
-    terraform apply \
-        -var-file=${TF_VARS_FILE} \
-        -var="registry_username=${DBNL_REGISTRY_USERNAME}" \
-        -var="registry_password=${DBNL_REGISTRY_PASSWORD}"
+    terraform apply -var-file=${TF_VARS_FILE}
     ```
