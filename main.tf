@@ -92,6 +92,7 @@ module "kubernetes" {
 
   prefix              = local.prefix
   resource_group_name = azurerm_resource_group.rg.name
+  resource_group_id   = azurerm_resource_group.rg.id
   location            = azurerm_resource_group.rg.location
 
   instance_type = local.instance_types[var.instance_size].kubernetes

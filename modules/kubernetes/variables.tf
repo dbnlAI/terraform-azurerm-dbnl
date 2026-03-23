@@ -8,6 +8,11 @@ variable "resource_group_name" {
   description = "The name of the resource group in which to create the storage account."
 }
 
+variable "resource_group_id" {
+  type        = string
+  description = "The ID of the resource group, used to scope AGIC role assignments."
+}
+
 variable "location" {
   type        = string
   description = "The Azure region where the AKS cluster will be deployed."

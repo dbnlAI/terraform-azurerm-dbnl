@@ -27,6 +27,6 @@ resource "azurerm_storage_account" "storage_account" {
 
 resource "azurerm_storage_container" "data_container" {
   name                  = "${var.prefix}-data"
-  storage_account_name  = azurerm_storage_account.storage_account.name
+  storage_account_id    = azurerm_storage_account.storage_account.id
   container_access_type = "private"
 }
