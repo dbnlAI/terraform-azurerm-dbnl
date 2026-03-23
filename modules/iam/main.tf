@@ -5,6 +5,7 @@ locals {
     "api-srv",
     "flower-srv",
     "migration-job",
+    "scheduler-srv",
     "worker-srv",
     "ui-srv"
   ]

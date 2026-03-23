@@ -120,6 +120,21 @@ locals {
         repository = "${var.registry_server}/images/migration-job"
       }
     }
+    scheduler = {
+      enabled = true
+      serviceAccount = {
+        annotations = {
+          "azure.workload.identity/client-id" : var.service_identities["scheduler-srv"].client_id
+          "azure.workload.identity/tenant-id" : var.service_identities["scheduler-srv"].tenant_id
+        }
+      }
+      podLabels = {
+        "azure.workload.identity/use" : "true"
+      }
+      image = {
+        repository = "${var.registry_server}/images/scheduler-srv"
+      }
+    }
     ui = {
       serviceAccount = {
         annotations = {
