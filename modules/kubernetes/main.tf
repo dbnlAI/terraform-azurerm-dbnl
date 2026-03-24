@@ -50,12 +50,8 @@ locals {
   ingress_gateway_principal_id = azurerm_kubernetes_cluster.aks.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id
 }
 
-data "azurerm_resource_group" "rg" {
-  name = var.resource_group_name
-}
-
 resource "azurerm_role_assignment" "resource_group" {
-  scope                = data.azurerm_resource_group.rg.id
+  scope                = var.resource_group_id
   role_definition_name = "Reader"
   principal_id         = local.ingress_gateway_principal_id
 }

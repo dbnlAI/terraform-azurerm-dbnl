@@ -15,7 +15,7 @@ output "storage_container_name" {
 
 output "storage_container_resource_manager_id" {
   description = "The ID of the Azure Blob Storage Container."
-  value       = azurerm_storage_container.data_container.resource_manager_id
+  value       = azurerm_storage_container.data_container.id
 }
 
 output "location" {

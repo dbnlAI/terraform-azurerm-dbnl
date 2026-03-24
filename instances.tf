@@ -2,7 +2,7 @@ locals {
   instance_types = tomap({
     small = {
       database   = "GP_Standard_D2s_v3"
-      kubernetes = "Standard_E4s_v5"
+      kubernetes = "Standard_D4s_v3"
       redis = {
         sku_name = "Standard"
         family   = "C"
@@ -11,7 +11,7 @@ locals {
     }
     medium = {
       database   = "GP_Standard_D8s_v3"
-      kubernetes = "Standard_E8s_v5"
+      kubernetes = "Standard_D8s_v3"
       redis = {
         sku_name = "Standard"
         family   = "C"

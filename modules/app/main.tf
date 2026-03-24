@@ -55,6 +55,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/api-srv"
+        tag        = var.helm_chart_version
       }
     }
     auth = {
@@ -118,6 +119,23 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/migration-job"
+        tag        = var.helm_chart_version
+      }
+    }
+    scheduler = {
+      enabled = true
+      serviceAccount = {
+        annotations = {
+          "azure.workload.identity/client-id" : var.service_identities["scheduler-srv"].client_id
+          "azure.workload.identity/tenant-id" : var.service_identities["scheduler-srv"].tenant_id
+        }
+      }
+      podLabels = {
+        "azure.workload.identity/use" : "true"
+      }
+      image = {
+        repository = "${var.registry_server}/images/scheduler-srv"
+        tag        = var.helm_chart_version
       }
     }
     ui = {
@@ -132,6 +150,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/ui-srv"
+        tag        = var.helm_chart_version
       }
     }
     worker = {
@@ -149,6 +168,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/worker-srv"
+        tag        = var.helm_chart_version
       }
     }
     flower = var.flower_enabled ? {
@@ -168,6 +188,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/flower-srv"
+        tag        = var.helm_chart_version
       }
       } : {
       enabled        = false
@@ -179,6 +200,7 @@ locals {
       port = 0
       image = {
         repository = "${var.registry_server}/images/flower-srv"
+        tag        = var.helm_chart_version
       }
     }
     storage = {
