@@ -47,5 +47,6 @@ No modules.
 | <a name="output_cluster_client_certificate"></a> [cluster\_client\_certificate](#output\_cluster\_client\_certificate) | Kubernetes cluster client certificate |
 | <a name="output_cluster_client_key"></a> [cluster\_client\_key](#output\_cluster\_client\_key) | Kubernetes cluster client certificate |
 | <a name="output_cluster_host"></a> [cluster\_host](#output\_cluster\_host) | Kubernetes cluster host |
+| <a name="output_cluster_name"></a> [cluster\_name](#output\_cluster\_name) | AKS cluster name |
 | <a name="output_cluster_oidc_issuer_url"></a> [cluster\_oidc\_issuer\_url](#output\_cluster\_oidc\_issuer\_url) | Kubernetes cluster OIDC issuer URL |
 <!-- END_TF_DOCS -->

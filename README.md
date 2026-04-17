@@ -46,13 +46,14 @@
 | <a name="input_db_password"></a> [db\_password](#input\_db\_password) | Database password. | `string` | `null` | no |
 | <a name="input_dev_token_private_key"></a> [dev\_token\_private\_key](#input\_dev\_token\_private\_key) | Private key used to sign dev tokens. | `string` | n/a | yes |
 | <a name="input_domain"></a> [domain](#input\_domain) | App domain name. | `string` | n/a | yes |
-| <a name="input_enable_blob_soft_delete"></a> [enable\_blob\_soft\_delete](#input\_enable\_blob\_soft\_delete) | Whether to enable soft delete for blobs in the main storage account. | `bool` | `true` | no |
+| <a name="input_enable_blob_soft_delete"></a> [enable\_blob\_soft\_delete](#input\_enable\_blob\_soft\_delete) | Whether to enable soft delete for blobs in the main storage account. Must be false when using the ADLS Gen2 (abfs://) endpoint, which does not support soft delete. | `bool` | `false` | no |
 | <a name="input_flower_basic_auth_password"></a> [flower\_basic\_auth\_password](#input\_flower\_basic\_auth\_password) | Flower basic auth password for UI access. | `string` | `null` | no |
 | <a name="input_flower_basic_auth_username"></a> [flower\_basic\_auth\_username](#input\_flower\_basic\_auth\_username) | Flower basic auth username for UI access. | `string` | `null` | no |
 | <a name="input_flower_enabled"></a> [flower\_enabled](#input\_flower\_enabled) | Whether to enable Flower monitoring for Celery queues. | `bool` | `false` | no |
 | <a name="input_helm_chart_version"></a> [helm\_chart\_version](#input\_helm\_chart\_version) | Helm chart version. | `string` | `"0.30.0"` | no |
 | <a name="input_helm_release_name"></a> [helm\_release\_name](#input\_helm\_release\_name) | Helm release name. | `string` | `"dbnl"` | no |
 | <a name="input_helm_release_namespace"></a> [helm\_release\_namespace](#input\_helm\_release\_namespace) | Helm release namespace. | `string` | `"default"` | no |
+| <a name="input_image_tag"></a> [image\_tag](#input\_image\_tag) | Container image tag override. Defaults to helm\_chart\_version when null. | `string` | `null` | no |
 | <a name="input_instance_size"></a> [instance\_size](#input\_instance\_size) | App instance size | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | The Azure region where all resources will be created. | `string` | `"Central US"` | no |
 | <a name="input_oidc_audience"></a> [oidc\_audience](#input\_oidc\_audience) | OIDC audience. | `string` | `null` | no |
@@ -81,6 +82,7 @@
 | <a name="output_cluster_client_certificate"></a> [cluster\_client\_certificate](#output\_cluster\_client\_certificate) | The AKS cluster client certificate. |
 | <a name="output_cluster_client_key"></a> [cluster\_client\_key](#output\_cluster\_client\_key) | The AKS cluster client key. |
 | <a name="output_cluster_host"></a> [cluster\_host](#output\_cluster\_host) | The AKS cluster host. |
+| <a name="output_cluster_name"></a> [cluster\_name](#output\_cluster\_name) | The AKS cluster name. |
 | <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | The name of the Azure Resource Group. |
 | <a name="output_subnets"></a> [subnets](#output\_subnets) | A map of the created subnets. |
 | <a name="output_vnet_id"></a> [vnet\_id](#output\_vnet\_id) | The ID of the created Azure Virtual Network. |

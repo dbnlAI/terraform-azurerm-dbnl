@@ -18,6 +18,11 @@ output "subnets" {
   value       = module.network.subnets
 }
 
+output "cluster_name" {
+  description = "The AKS cluster name."
+  value       = module.kubernetes.cluster_name
+}
+
 output "cluster_host" {
   description = "The AKS cluster host."
   value       = module.kubernetes.cluster_host

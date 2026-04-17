@@ -1,3 +1,8 @@
+output "cluster_name" {
+  description = "AKS cluster name"
+  value       = azurerm_kubernetes_cluster.aks.name
+}
+
 output "cluster_host" {
   description = "Kubernetes cluster host"
   value       = azurerm_kubernetes_cluster.aks.kube_config[0].host

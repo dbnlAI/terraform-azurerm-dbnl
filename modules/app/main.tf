@@ -4,6 +4,8 @@ locals {
 
   flower_basic_auth_enabled = nonsensitive(var.flower_basic_auth_username != null && var.flower_basic_auth_password != null)
 
+  image_tag = coalesce(var.image_tag, var.helm_chart_version)
+
   lb_annotations = {
     "kubernetes.io/ingress.class" : "azure/application-gateway"
     "cert-manager.io/cluster-issuer" : var.cert_manager_cluster_issuer
@@ -55,7 +57,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/api-srv"
-        tag        = var.helm_chart_version
+        tag        = local.image_tag
       }
     }
     auth = {
@@ -119,7 +121,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/migration-job"
-        tag        = var.helm_chart_version
+        tag        = local.image_tag
       }
     }
     scheduler = {
@@ -135,7 +137,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/scheduler-srv"
-        tag        = var.helm_chart_version
+        tag        = local.image_tag
       }
     }
     ui = {
@@ -150,7 +152,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/ui-srv"
-        tag        = var.helm_chart_version
+        tag        = local.image_tag
       }
     }
     worker = {
@@ -168,7 +170,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/worker-srv"
-        tag        = var.helm_chart_version
+        tag        = local.image_tag
       }
     }
     flower = var.flower_enabled ? {
@@ -188,7 +190,7 @@ locals {
       }
       image = {
         repository = "${var.registry_server}/images/flower-srv"
-        tag        = var.helm_chart_version
+        tag        = local.image_tag
       }
       } : {
       enabled        = false
@@ -200,7 +202,7 @@ locals {
       port = 0
       image = {
         repository = "${var.registry_server}/images/flower-srv"
-        tag        = var.helm_chart_version
+        tag        = local.image_tag
       }
     }
     storage = {

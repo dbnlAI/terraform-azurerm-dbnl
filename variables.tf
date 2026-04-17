@@ -47,9 +47,9 @@ variable "private_ip_address" {
 }
 
 variable "enable_blob_soft_delete" {
-  description = "Whether to enable soft delete for blobs in the main storage account."
+  description = "Whether to enable soft delete for blobs in the main storage account. Must be false when using the ADLS Gen2 (abfs://) endpoint, which does not support soft delete."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "blob_soft_delete_retention_days" {
@@ -144,6 +144,12 @@ variable "helm_chart_version" {
   type        = string
   description = "Helm chart version."
   default     = "0.30.0"
+}
+
+variable "image_tag" {
+  type        = string
+  description = "Container image tag override. Defaults to helm_chart_version when null."
+  default     = null
 }
 
 variable "helm_release_name" {
