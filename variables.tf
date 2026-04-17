@@ -47,9 +47,9 @@ variable "private_ip_address" {
 }
 
 variable "enable_blob_soft_delete" {
-  description = "Whether to enable soft delete for blobs in the main storage account."
+  description = "Whether to enable soft delete for blobs in the main storage account. Must be false when using the ADLS Gen2 (abfs://) endpoint, which does not support soft delete."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "blob_soft_delete_retention_days" {
