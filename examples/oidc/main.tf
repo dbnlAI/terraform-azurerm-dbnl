@@ -11,7 +11,7 @@ provider "kubernetes" {
 }
 
 provider "helm" {
-  kubernetes {
+  kubernetes = {
     host                   = module.dbnl.cluster_host
     cluster_ca_certificate = base64decode(module.dbnl.cluster_ca_certificate)
     client_key             = base64decode(module.dbnl.cluster_client_key)

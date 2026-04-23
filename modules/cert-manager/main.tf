@@ -5,10 +5,9 @@ resource "helm_release" "cert_manager" {
   namespace        = "cert-manager"
   create_namespace = true
 
-  set {
-    name  = "crds.enabled"
-    value = "true"
-  }
+  set = [
+    { name = "crds.enabled", value = "true" },
+  ]
 }
 
 resource "helm_release" "cluster_issuer" {
@@ -16,20 +15,11 @@ resource "helm_release" "cluster_issuer" {
   chart     = "${path.module}/charts/cluster-issuer"
   namespace = "cert-manager"
 
-  set {
-    name  = "email"
-    value = var.acme_email
-  }
-
-  set {
-    name  = "server"
-    value = var.acme_server
-  }
-
-  set {
-    name  = "privateKeySecretRef"
-    value = var.acme_private_key_secret
-  }
+  set = [
+    { name = "email", value = var.acme_email },
+    { name = "server", value = var.acme_server },
+    { name = "privateKeySecretRef", value = var.acme_private_key_secret },
+  ]
 
   depends_on = [helm_release.cert_manager]
 }
